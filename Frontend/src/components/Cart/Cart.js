@@ -9,9 +9,13 @@ const Cart = props => {
 
     const hasItems = crtCtx.items.length > 0;
 
-    const cartItemRemoved = id => {};
+    const cartItemRemoved = (id) => {
+        crtCtx.removeItem(id);
+    };
 
-    const cartAddHandler = item => {};
+    const cartAddHandler = item => {
+        crtCtx.addItem({...item, amount:1});
+    };
 
     const cartItems = <ul className={classes["cart-items"]}>
         {
